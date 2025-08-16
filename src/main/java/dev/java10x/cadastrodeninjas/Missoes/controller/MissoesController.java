@@ -1,5 +1,6 @@
 package dev.java10x.cadastrodeninjas.Missoes.controller;
 
+import dev.java10x.cadastrodeninjas.Missoes.dto.MissoesDTO;
 import dev.java10x.cadastrodeninjas.Missoes.model.MissoesModel;
 import dev.java10x.cadastrodeninjas.Missoes.service.MissoesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,25 +21,25 @@ public class MissoesController {
 
     //GET -- Mandar uma requisicao para mostrar as missoes
     @GetMapping("/listar")
-    public List<MissoesModel> listarMissoes(){
+    public List<MissoesDTO> listarMissoes(){
         return missoesService.listarMissoes();
     }
 
     //GET -- Mandar uma requisicao para mostrar missao por id
     @GetMapping("/listar/{id}")
-    public MissoesModel listarMissaoPorId(@PathVariable Long id){
+    public MissoesDTO listarMissaoPorId(@PathVariable Long id){
         return missoesService.listarMissaoPorId(id);
     }
 
     //POST -- Mandar uma requisicao para criar as missoes
     @PostMapping("/criar")
-    public MissoesModel criarMissao(@RequestBody MissoesModel missoesModel){
-        return missoesService.criarMissao(missoesModel);
+    public MissoesDTO criarMissao(@RequestBody MissoesDTO missao){
+        return missoesService.criarMissao(missao);
     }
 
     //PUT -- Mandar uma requisicao para alterar as missoes
     @PutMapping("/alterar/{id}")
-    public MissoesModel alterarMissao(@PathVariable Long id, @RequestBody MissoesModel missoesAtualizado){
+    public MissoesDTO alterarMissao(@PathVariable Long id, @RequestBody MissoesDTO missoesAtualizado){
         return missoesService.atualizarMissao(id, missoesAtualizado);
     }
 
