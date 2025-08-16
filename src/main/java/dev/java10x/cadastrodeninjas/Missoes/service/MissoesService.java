@@ -4,28 +4,22 @@ import dev.java10x.cadastrodeninjas.Missoes.dto.MissoesDTO;
 import dev.java10x.cadastrodeninjas.Missoes.mapper.MissoesMapper;
 import dev.java10x.cadastrodeninjas.Missoes.model.MissoesModel;
 import dev.java10x.cadastrodeninjas.Missoes.repository.MissoesRepository;
-import dev.java10x.cadastrodeninjas.Ninjas.model.NinjaModel;
-import dev.java10x.cadastrodeninjas.Ninjas.repository.NinjaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Service
 public class MissoesService {
 
-    private final NinjaRepository ninjaRepository;
-    private MissoesRepository missoesRepository;
-    private MissoesMapper missoesMapper;
+    private final MissoesRepository missoesRepository;
+    private final MissoesMapper missoesMapper;
 
 
-    public MissoesService(MissoesRepository missoesRepository, MissoesMapper missoesMapper, NinjaRepository ninjaRepository) {
+    public MissoesService(MissoesRepository missoesRepository, MissoesMapper missoesMapper) {
         this.missoesRepository = missoesRepository;
         this.missoesMapper = missoesMapper;
-        this.ninjaRepository = ninjaRepository;
     }
 
     public List<MissoesDTO> listarMissoes(){
