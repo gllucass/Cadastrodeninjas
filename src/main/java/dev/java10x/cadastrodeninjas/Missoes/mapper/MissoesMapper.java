@@ -10,7 +10,7 @@ public class MissoesMapper {
         MissoesModel missoesModel = new MissoesModel();
         missoesModel.setId(missoesDTO.getId());
         missoesModel.setNome(missoesDTO.getNome());
-        missoesModel.setNome(missoesDTO.getDificuldade());
+        missoesModel.setDificuldade(missoesDTO.getDificuldade());
 
         return missoesModel;
     }
